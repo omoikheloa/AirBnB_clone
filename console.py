@@ -13,12 +13,11 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
     """
     Custom command interpreter for HBNB project
     """
-
-
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
@@ -101,7 +100,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """
-        Prints all string representations of all instances based or not on the class name
+        Prints string repr of all instances based or not on class name
         Usage: all [<class name>]
         """
         args = arg.split()
@@ -120,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """
-        Updates an instance based on the class name and id by adding or updating attribute
+        Updates an instance based on the class name and id
         Usage: update <class name> <id> <attribute name> "<attribute value>"
         """
         args = arg.split()
@@ -146,6 +145,7 @@ class HBNBCommand(cmd.Cmd):
         obj = storage.all()[key]
         setattr(obj, args[2], args[3].strip('"'))
         storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
