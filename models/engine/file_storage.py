@@ -15,12 +15,13 @@ from models.amenity import Amenity
 
 class FileStorage:
     """Serializes instances to a JSON file & deserializes back to instances"""
-    #string - path to JSON file
+    """#string - path to JSON file"""
     __file_path = "file.json"
-    #dictionary - empty but stores all objects by <class name>.id
+    """ dictionary - empty but stores all objects by <class name>.id"""
     __objects = {}
     classes = {"BaseModel": BaseModel, "User": User, "State": State,
-            "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
+               "City": City, "Amenity": Amenity, "Place": Place,
+               "Review": Review}
 
     def all(self):
         """Returns the dictionary __objects"""
